@@ -9,8 +9,8 @@ LIBS	= -lpthread
 $(TATGET): $(OBJS)
 	$(CC) -o $@ $^ $(LIBS)
 
-$(OBJS): $(SRCS)
-	$(CC) $(CFLAGS) $(INCDIR) -c $(SRCS)
+%.o: %.cpp
+	$(CC) $(CFLAGS) $(INCDIR) -o $@ -c $<
 
 run :
 	./$(TATGET)
